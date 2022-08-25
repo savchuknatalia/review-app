@@ -1,0 +1,24 @@
+<section class="products">
+    <div class="products__tittle products__inner">
+        <div class="products__name">
+            <p>Product Name</p>
+        </div>
+        <div class="products__description">
+            <p>Description</p>
+        </div>
+        <div class="products__actions">
+            <p>Actions</p>
+        </div>
+    </div>
+    <div class="products__info products__inner" *ngFor="let product of products">
+        <div class="products__name products__position">
+            <p>{{product.title}}</p>
+        </div>
+        <div class="products__description products__position">
+            <p>{{product.text}}</p>
+        </div>
+        <div class="products__actions">
+            <button class="products__actions-btn" (click)="goTo(product)">OPEN</button>
+        </div>
+    </div>
+</section>

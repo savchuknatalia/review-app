@@ -1,0 +1,48 @@
+<div class="container">
+    <section class="auth">
+        <p class="auth-redirect"> Have an account? <a routerLink="/signin">Sign In</a></p>
+        <form class="form" [formGroup]="signUpGroup" (ngSubmit)="submitForm()">
+            <h5 class="form__title">Sign up to Synapse Internship</h5>
+            <p class="form__text">Sign up on our platform</p>
+            <div class="validity-notification" *ngIf="errorMessage">
+                {{errorMessage}}
+            </div>
+            <div class="validity-notification"
+            *ngIf="signUpGroup.get('username')?.invalid && (signUpGroup.get('username')?.pristine && signUpGroup.get('username')?.touched)">
+                Please enter your username
+            </div>
+            <input class="form__username form__fild" type="text" placeholder="Username" formControlName="username">
+            <div class="validity-notification"
+                *ngIf="signUpGroup.get('password')?.invalid && signUpGroup.get('password')?.dirty">
+                Password must be min 6 characters long
+            </div>
+            <div class="validity-notification"
+                *ngIf="signUpGroup.get('password')?.pristine && signUpGroup.get('password')?.touched">
+                Please enter your password
+            </div>
+            <input class="form__password form__fild" type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted }">
+            <div class="validity-notification"
+                *ngIf="signUpGroup.get('confirmPassword')?.invalid && signUpGroup.get('confirmPassword')?.dirty">
+                Confirm password didn't match
+            </div>
+            <div class="validity-notification"
+                *ngIf="signUpGroup.get('confirmPassword')?.pristine && signUpGroup.get('confirmPassword')?.touched">
+                Please comfirm your password
+            </div>
+            <input class="form__password-confirm form__fild" type="password" placeholder="Confirm password"
+                formControlName="confirmPassword">
+            <div class="form__checkbox">
+                <div class="form__checkbox-inner">
+                    <input class="form__checkbox-input" type="checkbox" id="inlineCheckbox" value=""
+                        formControlName="rules">
+                    <label class="form__checkbox-label" for="inlineCheckbox1">
+                        <span class="form__checkbox-text">I have read the</span>
+                        <a routerLink="/terms" class="form__checkbox-rules">Terms and Conditions.</a>
+                    </label>
+                </div>
+            </div>
+            <button class="form__btn" type="submit" [disabled]="signUpGroup.invalid"><span>SIGN UP NOW</span></button>
+        </form>
+    </section>
+    <img src="./../../../assets/logo-bg.png" alt="Logo">
+</div>

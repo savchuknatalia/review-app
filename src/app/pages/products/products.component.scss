@@ -1,0 +1,41 @@
+@import 'variables';
+
+.products {
+    height: calc(100vh - 200px);
+    color: $primary-text;
+    background-color: $bg;
+    border: 1px solid #E4E7EB;
+    border-radius: 4px;
+
+    &__tittle {
+        @include font(500, 16px, 20px);
+        padding: 22px 33px 22px 30px;
+    }
+
+    &__info {
+        @include font(400, 14px, 20px);
+        padding: 10px 20px 10px 30px;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 30% auto 140px;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    &__position {
+        display: grid;
+        align-items: center;
+    }
+
+    &__actions {
+        display: grid;
+        justify-items: end;
+
+        &-btn {
+            width: 120px;
+            @include font(500, 14px, 20px);
+            @include btn-style;
+        }
+    }
+}

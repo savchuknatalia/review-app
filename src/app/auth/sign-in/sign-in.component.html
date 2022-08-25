@@ -1,0 +1,16 @@
+<div class="container">
+    <section class="auth">
+        <p class="auth-redirect"> Don’t have an account? <a routerLink="/signup">Sign Up</a></p>
+        <form class="form" [formGroup]="signInGroup" (ngSubmit)="submitForm()">
+            <h5 class="form__title">Sign in to Synapse Internship</h5>
+            <p class="form__text">Sign in on our platform</p>
+                <div class="validity-notification" *ngIf="errorMessage">
+                    {{errorMessage}}
+                </div>
+                <input class="form__username form__fild" type="text" placeholder="Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted }">
+                <input class="form__password form__fild" type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted }">
+            <button class="form__btn" type="submit"><span>SIGN IN</span></button>
+        </form>
+    </section>
+    <img src="./../../../assets/logo-bg.png" alt="Logo">
+</div>

@@ -1,0 +1,11 @@
+<section class="show-review" *ngFor="let review of reviews">
+    <div class="show-review-info">
+        <span>{{review.created_by.username}} </span>at {{review.created_at | date:"HH:MM, dd MMM YYYY"}}
+    </div>
+    <div class="show-review-rating">
+        <ngx-star-rating [(ngModel)]="review.rate" [disabled]="true"></ngx-star-rating>
+    </div>
+    <div class="show-review-text">
+        {{review.text}}
+    </div>
+</section>

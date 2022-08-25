@@ -1,0 +1,22 @@
+@import "variables";
+
+.footer {
+    width: 100%;
+    position: relative;
+
+    &::before {
+        @include line;
+    }
+
+    &__rights {
+        @include font(400, 14px, 22px);
+        color: $footer-text-rights;
+    }
+
+    &__text {
+        @include font(400, 12px, 18px);
+        color: $footer-text;
+        display: inline-block;
+        padding-bottom: 25px;
+    }
+}

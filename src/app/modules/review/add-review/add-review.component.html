@@ -1,0 +1,31 @@
+<section class="add-review">
+    <div class="review-form">
+        <p class="review-form__title">Your review</p>
+        <form [formGroup]="formAddReview" (ngSubmit)="submit()">
+            <div class="review-form__wrapper">
+                <div class="review-form__row">
+                    <div class="review-form__textarea-wrapper">
+                        <textarea name="" id="" cols="30" rows="10" class="review-form__textarea"
+                            placeholder="Type your review..." formControlName="text"></textarea>
+                    </div>
+                </div>
+                <div class="review-form__row">
+                    <div class="review-form__raiting">
+                        <ngx-star-rating [id]="'rating'" formControlName="rating"></ngx-star-rating>
+                    </div>
+                </div>
+                <div class="review-form__row">
+                    <button
+                        [class.btnClick]="btnCheck"
+                        [disabled]="formAddReview.invalid"
+                        class="review-form__button"
+                        type="submit"
+                        [class.disabled]="formAddReview.invalid"
+                        (click)="btnClick()"
+                    >SUBMIT REVIEW</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</section>

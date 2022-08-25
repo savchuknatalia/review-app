@@ -1,0 +1,38 @@
+@import 'variables';
+
+.container {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: 1fr 1.5fr
+}
+
+.product {
+    height: fit-content;
+    padding: 35px 37px 60px 37px;
+    @include content-section;
+
+    &__img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 38px;
+    }
+
+    &__title {
+        @include font(500, 24px, 28px);
+        color: $bold-text;
+        text-align: center;
+        margin-bottom: 17px;
+    }
+
+    &__info {
+        width: 100%;
+        display: inline-block;
+        @include font(400, 14px, 20px);
+        color: $grey-text;
+        text-align: center;
+    }
+}
+
+.review {
+    margin-bottom: 35px;
+}

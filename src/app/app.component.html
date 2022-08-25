@@ -1,0 +1,12 @@
+<div class="app">
+  <app-header *ngIf="auth.isAuth()"></app-header>
+  <div class="wrapper">
+    <app-left-sidebar *ngIf="auth.isAuth()"></app-left-sidebar>
+    <div class="container">
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer *ngIf="auth.isAuth()"></app-footer>
+    </div>
+  </div>
+</div>

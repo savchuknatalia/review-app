@@ -1,0 +1,53 @@
+@import "variables";
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F2F2F2;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    padding: 0;
+}
+
+input::placeholder {
+    @include font(400, 16px, 24px);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+ngx-star-rating {
+    label.star {
+        font-size: 28px !important;
+        padding: 2px !important;
+
+        &::before {
+            content: '\f005' !important;
+            color: #D1D1D1;
+        }
+
+        &:hover {
+            transform: none !important;
+        }
+    }
+
+    input.star:checked~label.star:before {
+        text-shadow: none !important;
+        color: $yellow  !important;
+    }
+}

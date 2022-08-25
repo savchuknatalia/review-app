@@ -1,0 +1,20 @@
+@import 'variables';
+
+.show-review {
+    @include content-section;
+    padding: 15px 24px;
+    margin-bottom: 28px;
+
+    &-info {
+        @include font(400, 16px, 20px);
+
+        span {
+            @include font(500, 16px, 20px);
+        }
+    }
+
+    &-rating {
+        display: inline-block;
+        padding: 6px 0;
+    }
+}
